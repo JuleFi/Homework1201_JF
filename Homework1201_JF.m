@@ -61,7 +61,7 @@ WaitSecs(0.2);
     
     % Experiment starten 
     
-    nTrials = 5;
+    nTrials = 50;
     RTs = NaN(1,nTrials); % Vektor für Reaktionzeit erstellen 
    
 for t = 1:nTrials 
@@ -81,7 +81,7 @@ for t = 1:nTrials
         Screen('TextSize', myWindow, 80); % Größe vom Keuz 
         DrawFormattedText(myWindow, '+', 'center', 'center', black); % + in die Mitte 
         Screen('Flip', myWindow); % sichtbar machen 
-        WaitSecs(0.6); % Kreuz bleibt 600ms sichtbar 
+        WaitSecs(0.9); % Kreuz bleibt 900ms sichtbar 
         
         
     % Maske erstellen, um Verarbeitung des Gesichtes einzugrenzen 
@@ -94,9 +94,9 @@ for t = 1:nTrials
         Screen('DrawTexture', myWindow, maskTex, [], maskRect);
         Screen('Flip', myWindow);
 
-        WaitSecs(0.01 + rand*0.02); % Maske dauert jedes Mal unterschiedlich lange 
+        WaitSecs(0.3); % Maske ist 300ms sichtbar 
         
-    % Gesicht soll kurz erscheinen (400ms)
+    % Gesicht soll kurz erscheinen (500ms)
         imgdata   = imread(file);
         myTexture = Screen('MakeTexture', myWindow, imgdata);
 
@@ -106,7 +106,7 @@ for t = 1:nTrials
         vbl = Screen('Flip', myWindow); % vbl = Stimulus Onset Zeitpunkt mit hoher Präzision 
         tStart = vbl; % ab diesem Moment soll die Reaktion gezählt werden
          
-        WaitSecs(0.4); 
+        WaitSecs(0.5); 
 
   
      % nach dem Gesicht soll das Fenster wieder grau werden    
