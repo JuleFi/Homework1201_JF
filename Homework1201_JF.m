@@ -1,9 +1,9 @@
 try
     % graues Fenster erstellen 
-    Screen('Preference', 'SkipSyncTests', 0);  
-   
+    Screen('Preference', 'SkipSyncTests', 1);  
+      
     myScreen = 0;
-    [myWindow, rect] = Screen('OpenWindow', myScreen, [128 128 128], [0 0 940 680]); 
+    [myWindow, rect] = Screen('OpenWindow', myScreen, [128 128 128]); 
     
     white = WhiteIndex(myWindow);
     black = BlackIndex(myWindow);
@@ -13,12 +13,12 @@ try
     knownFiles ={ ...
         'stimuli/known_1.png','stimuli/known_2.png','stimuli/known_3.png', ...
         'stimuli/known_4.png','stimuli/known_5.png','stimuli/known_6.png','stimuli/known_7.png',...
-        'stimuli/known_8.png','stimuli/known_9.png','stimuli/known_10.png''stimuli/known_11.png',...
+        'stimuli/known_8.png','stimuli/known_9.png','stimuli/known_10.png','stimuli/known_11.png',...
         'stimuli/known_12.png','stimuli/known_13.png','stimuli/known_14.png','stimuli/known_15.png'};
 
     unknownFiles ={ ...
-        'stimuli/unknown_1.png','stimuli/unknown_2.png','stimuli/unknown_3.png','stimuli/unknown_4.png'...
-        'stimuli/unknown_5.png','stimuli/unknown_6.png','stimuli/unknown_7.png','stimuli/unknown_8.png'...
+        'stimuli/unknown_1.png','stimuli/unknown_2.png','stimuli/unknown_3.png','stimuli/unknown_4.png',...
+        'stimuli/unknown_5.png','stimuli/unknown_6.png','stimuli/unknown_7.png','stimuli/unknown_8.png',...
         'stimuli/unknown_9.png','stimuli/unknown_10.png'};
 
     allFiles = [knownFiles unknownFiles];
@@ -173,4 +173,3 @@ end
    
 % mean(RT) erscheint automatisch im Command Window
 % RTs kann ich pro Bild angezeigt bekommen bei Befehl  
-      
